@@ -6,7 +6,7 @@ return {
     {
         "williamboman/mason-lspconfig.nvim",
         opts = {
-            ensure_installed = { "lua_ls", "pylsp", "gopls" }
+            ensure_installed = { "lua_ls", "pylsp", "gopls", "yamlls" }
         }
     },
     {
@@ -21,6 +21,9 @@ return {
                 capabilities = capabilities
             })
             lspconfig.gopls.setup({
+                capabilities = capabilities
+            })
+            lspconfig.yamlls.setup({
                 capabilities = capabilities
             })
             vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
